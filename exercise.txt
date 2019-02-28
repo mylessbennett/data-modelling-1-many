@@ -1,0 +1,145 @@
+1. one_to_many_assignment=# SELECT title FROM articles WHERE author_id=8;
+                                              title
+--------------------------------------------------------------------------------------------------
+ How Tech Business Models Come From Marginalized Communities, But Startups Are Still Mostly White
+ Confronting the Assumption of Whiteness in Virtual Spaces
+(2 rows)
+
+
+
+2. one_to_many_assignment=# SELECT id FROM provinces WHERE name='Ontario';
+ id
+----
+ 14
+(1 row)
+
+one_to_many_assignment=# SELECT name FROM cities WHERE province_id=14;
+  name
+---------
+ Toronto
+ Ottawa
+(2 rows)
+
+
+
+3. one_to_many_assignment=# SELECT author_id FROM articles WHERE title='Coding Bootcamps and Emotional Labor';
+ author_id
+-----------
+         4
+(1 row)
+
+one_to_many_assignment=# SELECT name FROM authors WHERE id=4;
+       name
+-------------------
+ Tilde Ann Thurium
+(1 row)
+
+
+
+4. one_to_many_assignment=# SELECT count (id) FROM provinces;
+ count
+-------
+    14
+(1 row)
+
+
+
+5. one_to_many_assignment=# SELECT id FROM residences WHERE address='4740 McDermott Street';
+ id
+----
+  9
+(1 row)
+
+one_to_many_assignment=# SELECT COUNT(id) FROM persons WHERE residence_id=9;
+ count
+-------
+     2
+(1 row)
+
+
+
+6. one_to_many_assignment=# SELECT city_id FROM residences WHERE address='4740 McDermott Street';
+ city_id
+---------
+      11
+(1 row)
+
+one_to_many_assignment=# SELECT name FROM cities WHERE id=8;
+  name
+---------
+ Toronto
+(1 row)
+
+
+
+7. one_to_many_assignment=# SELECT province_id FROM cities WHERE name='Toronto';
+ province_id
+-------------
+          14
+(1 row)
+
+one_to_many_assignment=# SELECT name FROM provinces WHERE id=14;
+  name
+---------
+ Ontario
+(1 row)
+
+
+
+8. one_to_many_assignment=# SELECT country_id FROM provinces WHERE name='Ontario';
+ country_id
+------------
+          1
+(1 row)
+
+one_to_many_assignment=# SELECT * FROM countries WHERE id=1;
+ id |  name  | year_founded | national_animal
+----+--------+--------------+-----------------
+  1 | Canada |         1867 | beaver
+(1 row)
+
+
+
+9. one_to_many_assignment=# SELECT * FROM persons WHERE name='Destini Davis';
+ id |     name      | age | residence_id
+----+---------------+-----+--------------
+  3 | Destini Davis |  37 |            2
+(1 row)
+
+one_to_many_assignment=# SELECT * FROM residences WHERE id=2;
+ id |      address      | year_built | city_id
+----+-------------------+------------+---------
+  2 | 537 Wyman Harbors |       1975 |       8
+(1 row)
+
+one_to_many_assignment=# SELECT * FROM cities WHERE id=8;
+ id |  name   | year_founded | province_id
+----+---------+--------------+-------------
+  8 | Toronto |         1793 |          14
+(1 row)
+
+one_to_many_assignment=# SELECT * FROM provinces WHERE id=14;
+ id |  name   | year_founded | country_id
+----+---------+--------------+------------
+ 14 | Ontario |         1867 |          1
+(1 row)
+
+one_to_many_assignment=# SELECT * FROM countries WHERE id=1;
+ id |  name  | year_founded | national_animal
+----+--------+--------------+-----------------
+  1 | Canada |         1867 | beaver
+(1 row)
+
+
+
+10. one_to_many_assignment=# SELECT id FROM authors WHERE name='Aditya Mukerjee';
+ id
+----
+  2
+(1 row)
+
+one_to_many_assignment=# SELECT title FROM articles WHERE id=2;
+                        title
+-----------------------------------------------------
+ The Hidden Dangers of AI for Queer and Trans People
+(1 row)
